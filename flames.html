@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flames</title>
+    <link  rel="stylesheet" href="{{ url_for('static' ,filename = 'flames.css') }}" />
+  </head>
+  <body>
+    <h1>Enter to find your's Relation </h1>
+        <form action="/flam" method="post" class="frm">
+              <label for="boy"><b>Boy Name</b></label>
+                <input
+                  type="text"
+                  id="boy"
+                  name="boy"
+                  required
+                  placeholder="Enter the Boy Name"
+                  pattern="[a-zA-Z ]+"
+                  title="Use Only Alphabets" required
+                  oninvalid="this.setCustomValidity('Please Enter Valid Name!')"
+                  oninput= "this.setCustomValidity('')"/><br><br/>
+          
+              <label for="girl"><b>Girl Name</b></label>
+                <input
+                  type="text"
+                  id="girl"
+                  name="girl"
+                  required
+                  placeholder="Enter the Girl Name"
+                  pattern="[a-zA-Z ]+"
+                  title="Use Only Alphabets" required
+                  oninvalid="this.setCustomValidity('Please Enter Valid Name!')"
+                  oninput= "this.setCustomValidity('')"/><br><br/>
+              <button class="btn" onclick="getData()">Get Relation</button>
+              <h2><b>Relation : {{final_result}}</b></h2>
+        </form>
+  </body>
+</html>
